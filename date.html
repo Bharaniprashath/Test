@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Call Date</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif,;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      background-image: url('https://dl.dropboxusercontent.com/scl/fi/6txvfuoh3opohsxip0e53/IMG-20240227-WA0000.jpg?rlkey=77rlx5k3aqk5a5151uzlccxkx&dl=0'); /* Replace with your background image URL */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #333;
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50; /* Green color */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+    button:hover {
+      background-color: #45a049; /* Darker green color on hover */
+    }
+
+    /* Celebration animation */
+    @keyframes celebrate {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .celebrate {
+      animation: celebrate 2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>First call date...?</h2>
+    <label for="options">Select Date:</label> <!-- Added for attribute -->
+    <select id="options">
+      <option value="option1">1.08.09.2023</option>
+      <option value="option2">2.08.07.2023</option>
+      <option value="option3">3.08.10.2023</option>
+      <option value="option4">4.08.08.2023</option>
+    </select>
+    <br><br>
+    <button id="goButton">Go</button>
+  </div>
+
+  <script>
+    var attempts = 0;
+    var wrongAttempts = 0;
+    var goButton = document.getElementById('goButton');
+
+    goButton.addEventListener('click', function() {
+      var selectedOption = document.getElementById('options').value;
+      attempts++;
+      
+      // Check if the selected option is wrong
+      if (selectedOption !== 'option3') {
+        wrongAttempts++;
+        
+        // If wrong answer is selected third time, close the window
+        if (wrongAttempts === 3) {
+          alert("You've selected the wrong answer three times. Exiting...");
+          window.close(); // Close the window
+        }
+      }
+
+      // If attempts exceed 3, close the window
+      if (attempts >= 3) {
+        alert("You've exceeded the maximum number of attempts. Exiting...");
+        window.close(); // Close the window
+      }
+
+      // If the third option is selected, add celebration class
+      if (selectedOption === 'option3') {
+        document.body.classList.add('celebrate');
+        setTimeout(function() {
+          window.location.href = 'css.html'; // Redirect after celebration
+        }, 2000); // Celebration duration
+      }
+    });
+  </script>
+</body>
+</html>

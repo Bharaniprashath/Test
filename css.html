@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Call Date</title>
+</head>
+<body>
+  <p class="name">
+    New name is 
+  </p>
+  <div class="aishu pulse">AISHU</div>
+  <p class="name1">
+    Call me if you like it
+  </p>
+  </body>
+
+  
+  <style>
+  .body{
+    background-image: url('https://dl.dropboxusercontent.com/scl/fi/6txvfuoh3opohsxip0e53/IMG-20240227-WA0000.jpg?rlkey=77rlx5k3aqk5a5151uzlccxkx&dl=0'); 
+  }
+  .name{
+    position:relative;
+    margin-top:200px;
+    font-family: 'Arial Black', Comic Sans MS;
+  font-size: 34px;
+  color: black; /* Coral color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+  text-align:left;
+  }
+   .name1{
+    font-family: 'Arial Black',Comic Sans MS;
+  font-size: 34px;
+  color: black; /* Coral color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+  text-align:right;
+  }
+  .aishu{
+  font-family: 'Arial Black',Comic Sans MS;
+  font-size: 50px;
+  color: deeppink; /* Coral color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+  text-align:center;
+}
+
+/* Animation for pulsating effect */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite; /* Pulsating animation */
+}
+</style>
+</html>
